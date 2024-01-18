@@ -1,13 +1,17 @@
-interface inputFields {
-    input: React.Dispatch<React.SetStateAction<string>>
+interface inputProps {
+    input: React.Dispatch<React.SetStateAction<string>>,
+    className?: string
+    placeHolder?: string
 }
 
-function Input({input}:inputFields) {
+function Input({input, className, placeHolder}: inputProps) {
     return(
         <div>
             <form>
                 <input name="Enter" 
-                onChange={(e) => input(e.target.value)}></input>
+                placeholder={placeHolder}
+                onChange={(e) => input(e.target.value)}
+                className={className}></input>
             </form>
         </div>
     )

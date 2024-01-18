@@ -1,17 +1,12 @@
 interface CheckboxProps {
-    list: string[]
+    list: JSX.Element[]
 }
 
 function Checkbox({list}:CheckboxProps) {
-
+    console.log(list)
     return(
         <div>
-            {list.map((element, index) => (
-                <div>
-                    <input key={index} type="checkbox"></input>
-                    <label>{" " + element}</label>
-                </div>
-                ))}
+            {...list}
         </div>
     )
 }
